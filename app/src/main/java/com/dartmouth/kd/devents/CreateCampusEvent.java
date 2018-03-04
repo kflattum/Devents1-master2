@@ -1,10 +1,8 @@
 package com.dartmouth.kd.devents;
 
 import android.content.Intent;
-import android.location.Location;
 import android.os.AsyncTask;
 import android.support.v4.app.FragmentActivity;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.AdapterView.OnItemClickListener;
 import android.os.Bundle;
@@ -14,20 +12,14 @@ import android.widget.ListView;
 
 import android.widget.Toast;
 
-import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
-import com.google.android.gms.common.GooglePlayServicesRepairableException;
-import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.places.GeoDataClient;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.PlaceDetectionClient;
 import com.google.android.gms.location.places.Places;
-import com.google.android.gms.location.places.ui.PlaceAutocomplete;
 import com.google.android.gms.location.places.ui.PlaceAutocompleteFragment;
 import com.google.android.gms.location.places.ui.PlaceSelectionListener;
 import com.google.android.gms.maps.model.LatLng;
-
-import java.text.SimpleDateFormat;
 
 
 public class CreateCampusEvent extends FragmentActivity {
@@ -166,8 +158,8 @@ public class CreateCampusEvent extends FragmentActivity {
                 Log.i(TAG, "Place: " + place.getName());
                 myLocation = place;
                 LatLng latlng1 = myLocation.getLatLng();
-                newEvent.setmLatitude(latlng1.latitude);
-                newEvent.setmLongitude(latlng1.longitude);
+                newEvent.setLatitude(latlng1.latitude);
+                newEvent.setLongitude(latlng1.longitude);
                 Log.i(TAG, "Showing lat " + latlng1.latitude);
                 Log.i(TAG, "Showing long " + latlng1.longitude);
 
@@ -186,8 +178,8 @@ public class CreateCampusEvent extends FragmentActivity {
     public void onSaveClicked(View v) {
 
         new InsertIntoDbTask().execute(newEvent);
-        Log.i(TAG, "Showing lat3 " + newEvent.getmLatitude());
-        Log.i(TAG, "Showing long3" + newEvent.getmLongitude());
+        Log.i(TAG, "Showing lat3 " + newEvent.getLatitude());
+        Log.i(TAG, "Showing long3" + newEvent.getLongitude());
 
         finish();
     }
@@ -211,26 +203,26 @@ public class CreateCampusEvent extends FragmentActivity {
 
 
     public void onTitleSet(String title) {
-        newEvent.setmTitle(title);
+        newEvent.setTitle(title);
     }
 
     public void onLocationSet(String location) {
-        newEvent.setmLocation(location);
+        newEvent.setLocation(location);
     }
 
     public void onLongitudeSet(Double longitude) {
-        newEvent.setmLongitude(longitude);
+        newEvent.setLongitude(longitude);
     }
     public void onLatitudeSet(Double latitude) {
-        newEvent.setmLatitude(latitude);
+        newEvent.setLatitude(latitude);
     }
 
     public void onDescriptionSet(String description) {
-        newEvent.setmDescription(description);
+        newEvent.setDescription(description);
     }
 
     public void onUrlSet(String url) {
-        newEvent.setmUrl(url);
+        newEvent.setURL(url);
     }
 
     public void onDateSet(int year, int monthOfYear, int dayOfMonth) {
@@ -238,32 +230,32 @@ public class CreateCampusEvent extends FragmentActivity {
     }
 
     public void onStartSet(int hourOfDay, int minute) {
-        newEvent.setmStart(hourOfDay, minute);
+        newEvent.setStart(hourOfDay, minute);
     }
 
     public void onEndSet(int hourOfDay, int minute) {
-        newEvent.setmEnd(hourOfDay, minute);
+        newEvent.setEnd(hourOfDay, minute);
     }
 
 
     public void onEventTypeSet(int eventType) {
-        newEvent.setmEventType(eventType);
+        newEvent.setEventType(eventType);
     }
 
     public void onProgramTypeSet(int programType) {
-        newEvent.setmProgramType(programType);
+        newEvent.setProgramType(programType);
     }
 
     public void onMajorSet(int major) {
-        newEvent.setmMajor(major);
+        newEvent.setMajor(major);
     }
 
     public void onGenderSet(int gender) {
-        newEvent.setmGender(gender);
+        newEvent.setGender(gender);
     }
 
     public void onGreekSocietySet(int greekSociety) {
-        newEvent.setmGreekSociety(greekSociety);
+        newEvent.setGreekSociety(greekSociety);
     }
 
     public void onYearSet(int year) {
@@ -271,7 +263,7 @@ public class CreateCampusEvent extends FragmentActivity {
     }
 
     public void onFoodSet(int food) {
-        newEvent.setmFood(food);
+        newEvent.setFood(food);
     }
 
     public class InsertIntoDbTask extends AsyncTask<CampusEvent, Void, String> {

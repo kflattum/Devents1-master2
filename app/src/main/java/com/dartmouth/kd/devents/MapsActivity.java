@@ -9,17 +9,12 @@ http://android-er.blogspot.com/2013/02/convert-between-latlng-and-location.html
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
-import android.graphics.Color;
 import android.location.Location;
 import android.location.LocationListener;
-import android.support.v4.app.FragmentActivity;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
@@ -36,7 +31,6 @@ import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
 
 import java.util.List;
-import java.util.Map;
 
 
 public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback, LocationListener, GoogleMap.OnMarkerClickListener, GoogleMap.OnInfoWindowClickListener{
@@ -89,11 +83,11 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         for (CampusEvent event : allEvents) {
             long id = event.getmId();
             float fid = id;
-            double lat = event.getmLatitude();
+            double lat = event.getLatitude();
             Log.d(TAG, "lat getting set " + lat);
-            double longi = event.getmLongitude();
+            double longi = event.getLongitude();
             Log.d(TAG, "long getting set" + longi);
-            String mTitle = event.getmTitle();
+            String mTitle = event.getTitle();
             Marker mMarker = mMap.addMarker(new MarkerOptions()
                     .position(new LatLng(lat, longi))
                     .title(mTitle));
@@ -149,18 +143,18 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         // Write row id into extras.
         extras.putLong(Globals.KEY_ROWID, event.getmId());
         // Passing information for display in the DisaplayEntryActivity.
-        extras.putString(Globals.KEY_TITLE,event.getmTitle());
+        extras.putString(Globals.KEY_TITLE,event.getTitle());
         extras.putString(Globals.KEY_DATE,
-                Utils.parseDate(event.getmDateTimeInMillis(), mContext));
+                Utils.parseDate(event.getDateTimeInMillis(), mContext));
         extras.putString(Globals.KEY_START,
-                Utils.parseStart(event.getmDateTimeInMillis(), mContext));
+                Utils.parseStart(event.getDateTimeInMillis(), mContext));
         extras.putString(Globals.KEY_END,
-                Utils.parseEnd(event.getmDateTimeInMillis(), mContext));
-        extras.putString(Globals.KEY_LOCATION,event.getmLocation());
-        extras.putString(Globals.KEY_DESCRIPTION,event.getmDescription());
-        extras.putString(Globals.KEY_URL,event.getmUrl());
-        extras.putDouble(Globals.KEY_LATITUDE, event.getmLatitude());
-        extras.putDouble(Globals.KEY_LONGITUDE, event.getmLongitude());
+                Utils.parseEnd(event.getDateTimeInMillis(), mContext));
+        extras.putString(Globals.KEY_LOCATION,event.getLocation());
+        extras.putString(Globals.KEY_DESCRIPTION,event.getDescription());
+        extras.putString(Globals.KEY_URL,event.getURL());
+        extras.putDouble(Globals.KEY_LATITUDE, event.getLatitude());
+        extras.putDouble(Globals.KEY_LONGITUDE, event.getLongitude());
 
 
         // Manual mode requires DisplayEntryActivity

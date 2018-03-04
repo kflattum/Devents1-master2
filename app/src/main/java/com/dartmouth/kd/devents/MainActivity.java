@@ -1,33 +1,21 @@
 package com.dartmouth.kd.devents;
 
-import android.*;
 import android.app.AlertDialog;
-import android.app.Fragment;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
 import android.os.Build;
-import android.support.design.widget.TabLayout;
-import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
-import com.google.android.gms.location.places.GeoDataClient;
-import com.google.android.gms.location.places.PlaceDetectionClient;
-import com.google.android.gms.location.places.Places;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -35,16 +23,15 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.ArrayList;
 import java.util.Map;
 
 
 public class MainActivity extends AppCompatActivity  {
 
     private CampusEventDbHelper mEventDbHelper;
+    private FilterDbHelper mFilterDbHelper;
     private FirebaseAuth firebaseAuth;
     private FirebaseUser firebaseUser;
     private DatabaseReference databaseReference;
@@ -59,14 +46,17 @@ public class MainActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
         checkPermissions();
+        mcontext = this;
+        mEventDbHelper = new CampusEventDbHelper(mcontext);
+        mEventDbHelper.deleteAllEvents();
+        mFilterDbHelper = new FilterDbHelper(mcontext);
+        mFilterDbHelper.deleteAllFilters();
 
         FirebaseApp.initializeApp(this);
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = firebaseAuth.getCurrentUser();
         databaseReference = FirebaseDatabase.getInstance().getReference("masterSheet");
-        mcontext = this;
-        mEventDbHelper = new CampusEventDbHelper(mcontext);
-        mEventDbHelper.deleteAllEvents();
+
 
         //databaseReference = FirebaseDatabase.getInstance().getReference();
 
@@ -85,6 +75,7 @@ public class MainActivity extends AppCompatActivity  {
     protected void onStart() {
         super.onStart();
 
+        //
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -93,30 +84,30 @@ public class MainActivity extends AppCompatActivity  {
                 Map<String,Object> singleRun =  (Map<String, Object>) eventSnapshot.getValue();
 
                 CampusEvent event = new CampusEvent();
-                event.setmTitle(singleRun.get("Title").toString());
-                event.setmLocation(singleRun.get("Location").toString());
+                event.setTitle(singleRun.get("Title").toString());
+                event.setLocation(singleRun.get("Location").toString());
                 event.setmDate(0, 0, 0);
-                event.setmEnd(singleRun.get("End").toString());
-                event.setmStart(singleRun.get("Start").toString());
+                event.setEnd(singleRun.get("End").toString());
+                event.setStart(singleRun.get("Start").toString());
                 //event.setmDate(singleRun.get("Date").toString());
-                //event.setmEnd(singleRun.get("End").toString());
-                //event.setmStart(singleRun.get("Start").toString());
-                event.setmUrl(singleRun.get("URL").toString());
-                event.setmDescription(singleRun.get("Description").toString());
-                //event.setmLongitude(singleRun.get("Longitude").toString());
-                //event.setmLatitude(singleRun.get("Latitude").toString());
+                //event.setEnd(singleRun.get("End").toString());
+                //event.setStart(singleRun.get("Start").toString());
+                event.setURL(singleRun.get("URL").toString());
+                event.setDescription(singleRun.get("Description").toString());
+                //event.setLongitude(singleRun.get("Longitude").toString());
+                //event.setLatitude(singleRun.get("Latitude").toString());
                 //Double longi = (double) singleRun.get("Longitude");
                 double dub = 0;
-                event.setmLongitude(dub);
+                event.setLongitude(dub);
                 //Double lat = (double) singleRun.get("Latitude");
-                event.setmLatitude(dub);
-                event.setmGreekSociety(0);
-                event.setmMajor(0);
-                event.setmGender(0);
+                event.setLatitude(dub);
+                event.setGreekSociety(0);
+                event.setMajor(0);
+                event.setGender(0);
                 event.setmYear(0);
-                event.setmProgramType(0);
-                event.setmEventType(0);
-                event.setmFood(2);
+                event.setProgramType(0);
+                event.setEventType(0);
+                event.setFood(2);
                 mEventDbHelper = new CampusEventDbHelper(mcontext);
 
                 new InsertIntoDbTask().execute(event);

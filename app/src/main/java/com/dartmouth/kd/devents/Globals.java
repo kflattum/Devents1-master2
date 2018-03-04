@@ -9,20 +9,20 @@ public class Globals {
     public static final String TAGG = "DEvents";
     // Table schema, column names
     public static final String KEY_ROWID = "_id";
-    public static final String KEY_TITLE = "title";
-    public static final String KEY_DESCRIPTION = "description";
-    public static final String KEY_LOCATION = "location";
-    public static final String KEY_DATE = "date";
-    public static final String KEY_START = "start";
-    public static final String KEY_END = "end";
-    public static final String KEY_URL = "url";
-    public static final String KEY_LATITUDE = "latitude";
-    public static final String KEY_LONGITUDE = "longitude";
-    public static final String KEY_FOOD = "food";
-    public static final String KEY_MAJOR = "major";
-    public static final String KEY_EVENT_TYPE = "event_type";
-    public static final String KEY_PROGRAM_TYPE = "program_type";
-    public static final String KEY_YEAR = "year";
-    public static final String KEY_GREEK_SOCIETY = "greek_society";
-    public static final String KEY_GENDER = "gender";
+    public static final String KEY_TITLE = "Title";
+    public static final String KEY_DESCRIPTION = "Description";
+    public static final String KEY_LOCATION = "Location";
+    public static final String KEY_DATE = "Date";
+    public static final String KEY_START = "Start";
+    public static final String KEY_END = "End";
+    public static final String KEY_URL = "URL";
+    public static final String KEY_LATITUDE = "Latitude";
+    public static final String KEY_LONGITUDE = "Longitude";
+    public static final String KEY_FOOD = "Food";
+    public static final String KEY_MAJOR = "Major";
+    public static final String KEY_EVENT_TYPE = "EventType";
+    public static final String KEY_PROGRAM_TYPE = "ProgramType";
+    public static final String KEY_YEAR = "Year";
+    public static final String KEY_GREEK_SOCIETY = "GreekSociety";
+    public static final String KEY_GENDER = "Gender";
 }

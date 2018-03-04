@@ -172,6 +172,11 @@ public class FilterDbHelper extends SQLiteOpenHelper {
     }
 
 
+    public void deleteAllFilters() {
+        SQLiteDatabase dbObj = getWritableDatabase();
+        dbObj.delete(FilterDbHelper.TABLE_FILTERS, null, null);
+    }
+
     public ArrayList<CampusEvent> eventListFilter (ArrayList<CampusEvent> campusEvents, Filters filter) {
         ArrayList<CampusEvent> newList = new ArrayList<CampusEvent>();
         //if all the filters are zero, return original list
@@ -188,7 +193,7 @@ public class FilterDbHelper extends SQLiteOpenHelper {
             if (filter.getfFood() != 0) {
                 for (CampusEvent event : campusEvents) {
                     int scaleval = filter.getfFood() - 1;
-                    if (event.getmFood() == scaleval) {
+                    if (event.getFood() == scaleval) {
                         newList.add(event);
                     }
                 }
@@ -196,7 +201,7 @@ public class FilterDbHelper extends SQLiteOpenHelper {
             if (filter.getfEventType() != 0) {
                 for (CampusEvent event : campusEvents) {
                     int scaleval = filter.getfEventType() - 1;
-                    if (event.getmEventType() == scaleval) {
+                    if (event.getEventType() == scaleval) {
                         newList.add(event);
                     }
                 }
@@ -204,7 +209,7 @@ public class FilterDbHelper extends SQLiteOpenHelper {
 
             if (filter.getfProgramType() != 0) {
                 for (CampusEvent event : campusEvents) {
-                    if (event.getmProgramType() == filter.getfProgramType()) {
+                    if (event.getProgramType() == filter.getfProgramType()) {
                         newList.add(event);
                     }
                 }
@@ -212,7 +217,7 @@ public class FilterDbHelper extends SQLiteOpenHelper {
 
             if (filter.getfYear() != 0) {
                 for (CampusEvent event : campusEvents) {
-                    if (event.getmYear() == filter.getfYear()) {
+                    if (event.getYear() == filter.getfYear()) {
                         newList.add(event);
                     }
                 }
@@ -220,7 +225,7 @@ public class FilterDbHelper extends SQLiteOpenHelper {
 
             if (filter.getfMajor() != 0) {
                 for (CampusEvent event : campusEvents) {
-                    if (event.getmMajor() == filter.getfMajor()) {
+                    if (event.getMajor() == filter.getfMajor()) {
                         newList.add(event);
                     }
                 }
@@ -228,7 +233,7 @@ public class FilterDbHelper extends SQLiteOpenHelper {
 
             if (filter.getfGender() != 0) {
                 for (CampusEvent event : campusEvents) {
-                    if (event.getmGender() == filter.getfGender()) {
+                    if (event.getGender() == filter.getfGender()) {
                         newList.add(event);
                     }
                 }
@@ -236,7 +241,7 @@ public class FilterDbHelper extends SQLiteOpenHelper {
 
             if (filter.getfGreekSociety() != 0) {
                 for (CampusEvent event : campusEvents) {
-                    if (event.getmGreekSociety() == filter.getfGreekSociety()) {
+                    if (event.getGreekSociety() == filter.getfGreekSociety()) {
                         newList.add(event);
                     }
                 }
