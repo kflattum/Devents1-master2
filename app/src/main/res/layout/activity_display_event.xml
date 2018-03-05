@@ -98,6 +98,89 @@
             android:editable = "false"
             android:layout_margin="5dp" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Will there be food?"/>
+
+        <EditText
+            android:id="@+id/editDispFood"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:editable = "false"
+            android:layout_margin="5dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Event Type"/>
+
+        <EditText
+            android:id="@+id/editDispEventType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:editable = "false"
+            android:layout_margin="5dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Program Type"/>
+
+        <EditText
+            android:id="@+id/editDispProgramType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:editable = "false"
+            android:layout_margin="5dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Years Welcome"/>
+
+        <EditText
+            android:id="@+id/editDispYear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:editable = "false"
+            android:layout_margin="5dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Majors Welcome"/>
+
+        <EditText
+            android:id="@+id/editDispMajor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:editable = "false"
+            android:layout_margin="5dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Greek Societies Welcome"/>
+
+        <EditText
+            android:id="@+id/editDispGreekSociety"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:editable = "false"
+            android:layout_margin="5dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Genders Welcome"/>
+
+        <EditText
+            android:id="@+id/editDispGender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:editable = "false"
+            android:layout_margin="5dp" />
+
         <Button
             android:id="@+id/btnSavetoMyDEvents"
             android:layout_width="wrap_content"

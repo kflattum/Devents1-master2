@@ -37,6 +37,13 @@ public class DisplayEventActivity extends Activity {
             ((EditText) findViewById(R.id.editDispLocation)).setText(extras.getString(Globals.KEY_LOCATION));
             ((EditText) findViewById(R.id.editDispDescription)).setText(extras.getString(Globals.KEY_DESCRIPTION));
             ((EditText) findViewById(R.id.editDispUrl)).setText(extras.getString(Globals.KEY_URL));
+            ((EditText) findViewById(R.id.editDispFood)).setText(extras.getString(Globals.KEY_FOOD));
+            ((EditText) findViewById(R.id.editDispEventType)).setText(extras.getString(Globals.KEY_EVENT_TYPE));
+            ((EditText) findViewById(R.id.editDispProgramType)).setText(extras.getString(Globals.KEY_PROGRAM_TYPE));
+            ((EditText) findViewById(R.id.editDispYear)).setText(extras.getString(Globals.KEY_YEAR));
+            ((EditText) findViewById(R.id.editDispMajor)).setText(extras.getString(Globals.KEY_MAJOR));
+            ((EditText) findViewById(R.id.editDispGreekSociety)).setText(extras.getString(Globals.KEY_GREEK_SOCIETY));
+            ((EditText) findViewById(R.id.editDispGender)).setText(extras.getString(Globals.KEY_GENDER));
         }
     }
 

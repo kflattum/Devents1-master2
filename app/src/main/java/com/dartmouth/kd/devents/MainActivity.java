@@ -84,16 +84,16 @@ public class MainActivity extends AppCompatActivity  {
                 Map<String,Object> singleRun =  (Map<String, Object>) eventSnapshot.getValue();
 
                 CampusEvent event = new CampusEvent();
-                event.setTitle(singleRun.get("Title").toString());
-                event.setLocation(singleRun.get("Location").toString());
-                event.setmDate(0, 0, 0);
-                event.setEnd(singleRun.get("End").toString());
-                event.setStart(singleRun.get("Start").toString());
+                event.setTitle(singleRun.get("title").toString());
+                event.setLocation(singleRun.get("location").toString());
+                event.setDate(0, 0, 0);
+                event.setEnd(singleRun.get("mEnd").toString());
+                event.setStart(singleRun.get("mStart").toString());
                 //event.setmDate(singleRun.get("Date").toString());
                 //event.setEnd(singleRun.get("End").toString());
                 //event.setStart(singleRun.get("Start").toString());
-                event.setURL(singleRun.get("URL").toString());
-                event.setDescription(singleRun.get("Description").toString());
+                event.setURL(singleRun.get("url").toString());
+                event.setDescription(singleRun.get("description").toString());
                 //event.setLongitude(singleRun.get("Longitude").toString());
                 //event.setLatitude(singleRun.get("Latitude").toString());
                 //Double longi = (double) singleRun.get("Longitude");
@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity  {
                 event.setGreekSociety(0);
                 event.setMajor(0);
                 event.setGender(0);
-                event.setmYear(0);
+                event.setYear(0);
                 event.setProgramType(0);
                 event.setEventType(0);
                 event.setFood(2);

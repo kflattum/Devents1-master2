@@ -198,7 +198,7 @@ public class CampusEventDbHelper extends SQLiteOpenHelper {
         event.setMajor(cursor.getInt(cursor.getColumnIndex(KEY_MAJOR)));
         event.setEventType(cursor.getInt(cursor.getColumnIndex(KEY_EVENT_TYPE)));
         event.setProgramType(cursor.getInt(cursor.getColumnIndex(KEY_PROGRAM_TYPE)));
-        event.setmYear(cursor.getInt(cursor.getColumnIndex(KEY_YEAR)));
+        event.setYear(cursor.getInt(cursor.getColumnIndex(KEY_YEAR)));
         event.setGreekSociety(cursor.getInt(cursor.getColumnIndex(KEY_GREEK_SOCIETY)));
         event.setGender(cursor.getInt(cursor.getColumnIndex(KEY_GENDER)));
         return event;

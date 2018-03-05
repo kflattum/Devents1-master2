@@ -42,13 +42,6 @@ public class CreateCampusEvent extends FragmentActivity {
     public static final int LIST_ITEM_ID_GREEK_SOCIETY = 5;
     public static final int LIST_ITEM_ID_GENDER = 6;
 
-    private int mFood;
-    private String mEventType;
-    private String mProgramType;
-    private String mYear;
-    private String mMajor;
-    private String mGreekSociety;
-    private String mGender;
     public static final String TAG = "KF";
 
     Place myLocation;
@@ -160,8 +153,6 @@ public class CreateCampusEvent extends FragmentActivity {
                 LatLng latlng1 = myLocation.getLatLng();
                 newEvent.setLatitude(latlng1.latitude);
                 newEvent.setLongitude(latlng1.longitude);
-                Log.i(TAG, "Showing lat " + latlng1.latitude);
-                Log.i(TAG, "Showing long " + latlng1.longitude);
 
             }
             @Override
@@ -178,8 +169,6 @@ public class CreateCampusEvent extends FragmentActivity {
     public void onSaveClicked(View v) {
 
         new InsertIntoDbTask().execute(newEvent);
-        Log.i(TAG, "Showing lat3 " + newEvent.getLatitude());
-        Log.i(TAG, "Showing long3" + newEvent.getLongitude());
 
         finish();
     }
@@ -202,31 +191,31 @@ public class CreateCampusEvent extends FragmentActivity {
     }
 
 
-    public void onTitleSet(String title) {
-        newEvent.setTitle(title);
+    public void onTitleSet(String Title) {
+        newEvent.setTitle(Title);
     }
 
-    public void onLocationSet(String location) {
-        newEvent.setLocation(location);
+    public void onLocationSet(String Location) {
+        newEvent.setLocation(Location);
     }
 
-    public void onLongitudeSet(Double longitude) {
-        newEvent.setLongitude(longitude);
+    public void onLongitudeSet(Double Longitude) {
+        newEvent.setLongitude(Longitude);
     }
-    public void onLatitudeSet(Double latitude) {
-        newEvent.setLatitude(latitude);
-    }
-
-    public void onDescriptionSet(String description) {
-        newEvent.setDescription(description);
+    public void onLatitudeSet(Double Latitude) {
+        newEvent.setLatitude(Latitude);
     }
 
-    public void onUrlSet(String url) {
-        newEvent.setURL(url);
+    public void onDescriptionSet(String Description) {
+        newEvent.setDescription(Description);
+    }
+
+    public void onUrlSet(String URL) {
+        newEvent.setURL(URL);
     }
 
     public void onDateSet(int year, int monthOfYear, int dayOfMonth) {
-        newEvent.setmDate(year, monthOfYear, dayOfMonth);
+        newEvent.setDate(year, monthOfYear, dayOfMonth);
     }
 
     public void onStartSet(int hourOfDay, int minute) {
@@ -238,32 +227,32 @@ public class CreateCampusEvent extends FragmentActivity {
     }
 
 
-    public void onEventTypeSet(int eventType) {
-        newEvent.setEventType(eventType);
+    public void onEventTypeSet(int EventType) {
+        newEvent.setEventType(EventType);
     }
 
-    public void onProgramTypeSet(int programType) {
-        newEvent.setProgramType(programType);
+    public void onProgramTypeSet(int ProgramType) {
+        newEvent.setProgramType(ProgramType);
     }
 
-    public void onMajorSet(int major) {
-        newEvent.setMajor(major);
+    public void onMajorSet(int Major) {
+        newEvent.setMajor(Major);
     }
 
-    public void onGenderSet(int gender) {
-        newEvent.setGender(gender);
+    public void onGenderSet(int Gender) {
+        newEvent.setGender(Gender);
     }
 
-    public void onGreekSocietySet(int greekSociety) {
-        newEvent.setGreekSociety(greekSociety);
+    public void onGreekSocietySet(int GreekSociety) {
+        newEvent.setGreekSociety(GreekSociety);
     }
 
-    public void onYearSet(int year) {
-        newEvent.setmYear(year);
+    public void onYearSet(int Year) {
+        newEvent.setYear(Year);
     }
 
-    public void onFoodSet(int food) {
-        newEvent.setFood(food);
+    public void onFoodSet(int Food) {
+        newEvent.setFood(Food);
     }
 
     public class InsertIntoDbTask extends AsyncTask<CampusEvent, Void, String> {

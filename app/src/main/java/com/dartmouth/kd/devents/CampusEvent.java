@@ -59,53 +59,54 @@ public class CampusEvent {
         return Title;
     }
 
-    public void setTitle(String title) {
-        this.Title = title;
+    public void setTitle(String Title) {
+        this.Title = Title;
     }
 
     public String getLocation() {
         return Location;
     }
 
-    public void setLocation(String location) {
-        this.Location = location;
+    public void setLocation(String Location) {
+        this.Location = Location;
     }
 
     public Double getLatitude() {
         return Latitude;
     }
 
-    public void setLatitude(Double latitude) {
-        this.Latitude = latitude;
+    public void setLatitude(Double Latitude) {
+        this.Latitude = Latitude;
     }
 
     public Double getLongitude() {
         return Longitude;
     }
 
-    public void setLongitude(Double longitude) {
-        this.Longitude = longitude;
+    public void setLongitude(Double Longitude) {
+        this.Longitude = Longitude;
     }
 
     public String getDescription() {
         return Description;
     }
 
-    public void setDescription(String description) {
-        this.Description = description;
+    public void setDescription(String Description) {
+        this.Description = Description;
     }
 
     //@Exclude
-    public String getmDate() {
+    public String getDate() {
         return Date;
     }
 
-    public void setmDate(int year, int monthOfYear, int dayOfMonth) {
+    public void setDate(int year, int monthOfYear, int dayOfMonth) {
         Calendar date = Calendar.getInstance();
         date.set(year, monthOfYear, dayOfMonth);
         date.toString();
         Date = date.toString();
     }
+
 
     public long getDateTimeInMillis() {
         long mDate = 0;
@@ -170,64 +171,64 @@ public class CampusEvent {
         return URL;
     }
 
-    public void setURL(String url) {
-        this.URL = url;
+    public void setURL(String URL) {
+        this.URL = URL;
     }
 
     public int getFood(){
         return Food;
     }
 
-    public void setFood(int food){
-        this.Food = food;
+    public void setFood(int Food){
+        this.Food = Food;
     }
 
     public int getEventType() {
         return EventType;
     }
 
-    public void setEventType(int eventType) {
-        this.EventType = eventType;
+    public void setEventType(int EventType) {
+        this.EventType = EventType;
     }
 
     public int getProgramType() {
         return ProgramType;
     }
 
-    public void setProgramType(int programType) {
-        this.ProgramType = programType;
+    public void setProgramType(int ProgramType) {
+        this.ProgramType = ProgramType;
     }
 
     public int getYear() {
         return Year;
     }
 
-    public void setmYear(int year) {
-        this.Year = year;
+    public void setYear(int Year) {
+        this.Year = Year;
     }
 
     public int getMajor() {
         return Major;
     }
 
-    public void setMajor(int major) {
-        this.Major = major;
+    public void setMajor(int Major) {
+        this.Major = Major;
     }
 
     public int getGreekSociety() {
         return GreekSociety;
     }
 
-    public void setGreekSociety(int greekSociety) {
-        this.GreekSociety = greekSociety;
+    public void setGreekSociety(int GreekSociety) {
+        this.GreekSociety = GreekSociety;
     }
 
     public int getGender() {
         return Gender;
     }
 
-    public void setGender(int gender) {
-        this.Gender = gender;
+    public void setGender(int Gender) {
+        this.Gender = Gender;
     }
 
 }
