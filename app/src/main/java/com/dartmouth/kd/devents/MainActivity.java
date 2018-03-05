@@ -94,13 +94,10 @@ public class MainActivity extends AppCompatActivity  {
                 //event.setStart(singleRun.get("Start").toString());
                 event.setURL(singleRun.get("url").toString());
                 event.setDescription(singleRun.get("description").toString());
-                //event.setLongitude(singleRun.get("Longitude").toString());
-                //event.setLatitude(singleRun.get("Latitude").toString());
-                //Double longi = (double) singleRun.get("Longitude");
-                double dub = 0;
-                event.setLongitude(dub);
-                //Double lat = (double) singleRun.get("Latitude");
-                event.setLatitude(dub);
+                double lat = 43.7022;
+                double longi = 72.2896;
+                event.setLongitude(longi);
+                event.setLatitude(lat);
                 event.setGreekSociety(0);
                 event.setMajor(0);
                 event.setGender(0);

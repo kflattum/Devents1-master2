@@ -103,7 +103,6 @@ public class CampusEvent {
     public void setDate(int year, int monthOfYear, int dayOfMonth) {
         Calendar date = Calendar.getInstance();
         date.set(year, monthOfYear, dayOfMonth);
-        date.toString();
         Date = date.toString();
     }
 
@@ -114,37 +113,20 @@ public class CampusEvent {
     }
 
 
-    public void setDateTime(Calendar dateTime) {
-        //this.mDate = dateTime;
-
-    }
-
-    public void setDateTime(long timestamp) {
-
-        //this.mDate.setTimeInMillis(timestamp);
-    }
-
-
     public void setStart(int hourOfDay, int minute) {
         Calendar date = Calendar.getInstance();
+        date.set(0,0,0,hourOfDay,minute);
         Start = date.toString();
-        //mStart.set(Calendar.HOUR_OF_DAY, hourOfDay);
-        //mStart.set(Calendar.MINUTE, minute);
-        //mStart.set(Calendar.SECOND, 0);
     }
 
     public void setStart(String start){
         this.Start = start;
-        //this.mDate.setTimeInMillis(timestamp);
     }
 
     public void setDateTime(String date){
         this.Date = date;
     }
 
-    //public void setmDate(String d
-
-    //@Exclude
     public String getmStart() {
         return Start;
     }
@@ -152,17 +134,14 @@ public class CampusEvent {
 
     public void setEnd(int hourOfDay, int minute) {
         Calendar date = Calendar.getInstance();
+        date.set(0,0,0,hourOfDay,minute);
         End = date.toString();
-        //mEnd.set(Calendar.HOUR_OF_DAY, hourOfDay);
-        //mEnd.set(Calendar.MINUTE, minute);
-        //mEnd.set(Calendar.SECOND, 0);
     }
 
     public void setEnd(String end){
         this.End = end;
     }
 
-    //@Exclude
     public String getmEnd() {
         return End;
     }

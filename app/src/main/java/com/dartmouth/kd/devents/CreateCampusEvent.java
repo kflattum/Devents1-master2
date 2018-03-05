@@ -214,7 +214,7 @@ public class CreateCampusEvent extends FragmentActivity {
         newEvent.setURL(URL);
     }
 
-    public void onDateSet(int year, int monthOfYear, int dayOfMonth) {
+    public void onDateSet(int year, int monthOfYear, int dayOfMonth){
         newEvent.setDate(year, monthOfYear, dayOfMonth);
     }
 

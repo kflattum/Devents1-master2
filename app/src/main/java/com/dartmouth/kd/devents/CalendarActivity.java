@@ -253,6 +253,7 @@ public class CalendarActivity extends ListFragment implements LoaderManager.Load
         extras.putString(Globals.KEY_DESCRIPTION,event.getDescription());
         extras.putDouble(Globals.KEY_LATITUDE, event.getLatitude());
         extras.putDouble(Globals.KEY_LONGITUDE, event.getLongitude());
+
         extras.putInt(Globals.KEY_FOOD, event.getFood());
         extras.putInt(Globals.KEY_MAJOR,event.getMajor());
         extras.putInt(Globals.KEY_EVENT_TYPE,event.getEventType());
