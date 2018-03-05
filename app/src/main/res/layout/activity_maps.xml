@@ -27,7 +27,8 @@
             android:layout_weight="1"
             android:onClick="onExitMap"
             android:padding="10dip"
-            android:text="BACK" />
+            android:text="BACK"
+            android:fontFamily="casual"/>
 
     </LinearLayout>
 

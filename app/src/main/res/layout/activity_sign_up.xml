@@ -14,7 +14,8 @@
         android:layout_alignParentTop="true"
         android:ems="10"
         android:inputType="textEmailAddress"
-        android:hint="@string/email_hint" >
+        android:hint="@string/email_hint"
+        android:fontFamily="casual">
 
         <requestFocus />
     </EditText>
@@ -27,7 +28,8 @@
         android:layout_below="@+id/emailField"
         android:ems="10"
         android:inputType="textPassword"
-        android:hint="@string/password_hint" />
+        android:hint="@string/password_hint"
+        android:fontFamily="casual"/>
 
     <Button
         android:id="@+id/signupButton"
@@ -35,6 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/passwordField"
         android:layout_below="@+id/passwordField"
-        android:text="@string/sign_up_button_label" />
+        android:text="@string/sign_up_button_label"
+        android:fontFamily="casual"/>
 
 </RelativeLayout>

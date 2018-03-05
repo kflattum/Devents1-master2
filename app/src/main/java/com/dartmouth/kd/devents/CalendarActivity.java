@@ -1,5 +1,6 @@
 package com.dartmouth.kd.devents;
 
+import android.app.Activity;
 import android.app.ListFragment;
 import android.content.Context;
 import android.content.Intent;
@@ -150,16 +151,20 @@ public class CalendarActivity extends ListFragment implements LoaderManager.Load
         CampusEventDbHelper dbh = new CampusEventDbHelper(mContext);
 
         FilterDbHelper fdbh = new FilterDbHelper(mContext);
+
         currFilters = fdbh.getLastUsedFilter();
-         //currFilters = window.getCurrentFilters();
         Log.d(Globals.TAGG, "Are current filters null?" + currFilters);
-        ArrayList<CampusEvent> newList = dbh.eventListFilter(campusEvents, currFilters);
-        Log.d(Globals.TAGG, "Showing what is in new list" + newList);
-        eventsList = newList;
-        //eventsList = campusEvents;
+        if (currFilters == null) {
+            eventsList = campusEvents;
+        }else {
+            //currFilters = window.getCurrentFilters();
+
+            ArrayList<CampusEvent> newList = dbh.eventListFilter(campusEvents, currFilters);
+            Log.d(Globals.TAGG, "Showing what is in new list" + newList);
+            eventsList = newList;
+        }
         mAdapter.clear();
         Log.d("TAGG", "Load Finished");
-
 
         mAdapter.addAll(eventsList);
         mAdapter.notifyDataSetChanged();

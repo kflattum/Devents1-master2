@@ -7,14 +7,16 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Filter your DEvents"/>
+        android:text="Filter your DEvents"
+        android:fontFamily="casual"/>
 
     <ListView
         android:id="@+id/listview2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:entries="@array/create_event_audience_preferences" >
+        android:entries="@array/create_event_audience_preferences"
+        android:fontFamily="casual">
     </ListView>
 
     <LinearLayout
@@ -30,7 +32,8 @@
             android:layout_gravity="center_horizontal"
             android:layout_weight="1"
             android:onClick="onSaveClicked"
-            android:text="@string/ui_button_save" >
+            android:text="@string/ui_button_save"
+            android:fontFamily="casual">
         </Button>
 
         <Button
@@ -39,7 +42,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="onCancelClicked"
-            android:text="@string/ui_button_cancel" >
+            android:text="@string/ui_button_cancel"
+            android:fontFamily="casual">
         </Button>
     </LinearLayout>
 </LinearLayout>

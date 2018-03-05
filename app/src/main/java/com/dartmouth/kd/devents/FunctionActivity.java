@@ -16,7 +16,7 @@ public class FunctionActivity extends AppCompatActivity {
     //need this for the tabs
     TabLayout tabLayout;
     MapFragment fragmentMap;
-    CalendarActivity fragmentCalendar;
+    CalendarActivity fragmentCal;
     CreateFragment fragmentCreate;
     SettingsFragment fragmentSettings;
 
@@ -37,14 +37,14 @@ public class FunctionActivity extends AppCompatActivity {
 
 
         fragmentMap = new MapFragment();
-        fragmentCalendar = new CalendarActivity();
+        fragmentCal = new CalendarActivity();
         fragmentCreate = new CreateFragment();
         fragmentSettings = new SettingsFragment();
 
         fragments = new ArrayList<>();
         fragments.add(fragmentSettings);
         fragments.add(fragmentCreate);
-        fragments.add(fragmentCalendar);
+        fragments.add(fragmentCal);
         fragments.add(fragmentMap);
 
 
